@@ -11,8 +11,10 @@ if($con->connect_error){
  die("could not connect".$con->connect_error);
 }
 else{
- echo "connected";
+// echo "connected";
 }
+
+
 
 //close a connection
 

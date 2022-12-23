@@ -4,3 +4,12 @@ td {
  border: 1px solid black;
  border-collapse:collapse ;
 }
+#portalhome{
+ padding-bottom: 500px;
+background-image: "./tra.jpg";
+
+}
+
+body{
+ background-image: "../tra.jpg";
+}

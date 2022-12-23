@@ -21,7 +21,8 @@ $area=$_REQUEST['area'];
 $pass=$_REQUEST['passcode'];
 
 $hash=password_hash($pass,PASSWORD_DEFAULT);
-$sql="INSERT INTO users VALUES('$firstname','$lastname','$design','$email','$phone','$area','$hash')";
+$sql="INSERT INTO registers(fname,lname,designation,email,phone,area,passcode) 
+VALUES('$firstname','$lastname','$design','$email','$phone','$area','$hash')";
 if(mysqli_query($con,$sql)){
  echo "your data are submitted";
 }

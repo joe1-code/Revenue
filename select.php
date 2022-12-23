@@ -17,6 +17,7 @@
     
     <Table id="tab1">
     <tr>
+      <th>S/N</th>
     <th>FirstName</th>
     <th>LastName</th>
     <th>Designation</th>
@@ -39,16 +40,16 @@
   //echo "connected";
  }
 
- $sql = "SELECT * FROM users";
+ $sql = "SELECT * FROM registers";
  $result = $conn -> query($sql);
 
  if ($result -> num_rows > 0) {
   while ($row = $result -> fetch_assoc()) {
-    
-  
+   // echo count($row);
+  // echo sizeof($row)
  ?>
  <tr>
-    
+    <td><?php echo $row['id'];?></td>
     <td><?php echo $row['fname'];?></td>
     <td><?php echo $row['lname'];?></td>
     <td><?php echo $row['designation'];?></td>
