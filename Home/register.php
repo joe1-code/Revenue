@@ -24,7 +24,7 @@ $hash=password_hash($pass,PASSWORD_DEFAULT);
 $sql="INSERT INTO registers(fname,lname,designation,email,phone,area,passcode) 
 VALUES('$firstname','$lastname','$design','$email','$phone','$area','$hash')";
 if(mysqli_query($con,$sql)){
- echo "your data are submitted";
+ header("location:portal_home.html");
 }
 else{
    "could not submit".$mysqli_error;

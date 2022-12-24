@@ -24,6 +24,7 @@
     <th>Email</th>
     <th>Phone</th>
     <th>Area</th>
+    <th>Action</th>
     </tr>
     
 <?php
@@ -31,6 +32,7 @@
  $user = "root";
  $passwd = "";
  $db = "revenue";
+
 
  $conn = new mysqli($servername, $user, $passwd, $db);
  if ($conn -> connect_error) {
@@ -44,22 +46,35 @@
  $result = $conn -> query($sql);
 
  if ($result -> num_rows > 0) {
+  $i=0;
   while ($row = $result -> fetch_assoc()) {
    // echo count($row);
   // echo sizeof($row)
  ?>
+
  <tr>
-    <td><?php echo $row['id'];?></td>
+    <td><?php echo $i+1;?></td>
     <td><?php echo $row['fname'];?></td>
     <td><?php echo $row['lname'];?></td>
     <td><?php echo $row['designation'];?></td>
     <td><?php echo $row['email'];?></td>
     <td><?php echo $row['phone'];?></td>
     <td><?php echo $row['area'];?></td>
+    <td>
+            <form action='delete.php' method='POST'>
+                <input type='hidden' name='delete' value="<?php echo $row['id'];
+                
+                ?>" />
+                <input type='submit' value="Delete" />
+            </form>
+        </td>
+    <!-- <td><a href="./delete.php" $recordID="">Delete</a></td> -->
     </tr>
     <?php
-
-    }}?>
+    $i++;
+    }
+    
+    }?>
     </Table>
 
 </body>

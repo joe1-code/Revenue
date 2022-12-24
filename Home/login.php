@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 
 $user=$_REQUEST['uname'];
 $pass=$_REQUEST['pass'];
@@ -14,7 +14,7 @@ if($result->num_rows>0){
   header("location:login.html");
   }
   else{
-   header("location:./Dashboard/Home.html");
+   header("location:../Dashboard/Home.html");
   }
   
  }
